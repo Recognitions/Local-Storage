@@ -124,7 +124,7 @@ document.getElementById("theme").addEventListener('click',()=>{
         {
             name: "light",
             first: "white",
-            second: "#f8f8f8",
+            second: "#ececec",
             text: "#333"
         }
     ]
