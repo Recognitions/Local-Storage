@@ -72,14 +72,16 @@ h2{
 .form-group button{
     background-color: black;
     color: #f8f8f8;
+    text-shadow: 1px 2px 2px black;
     cursor: pointer;
     padding: 0.5rem 1rem;
     transition: filter 0.2s ease;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
+    justify-content: center;
     align-self: center;
-    width: 50%;
+    width: 70%;
     font-size: 20px;
 }
 .form-group button:hover{

@@ -14,18 +14,19 @@
         <form action="" id="product-form">
             <div class="form-group">
                 <label for="name">Nome</label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="name" id="name" pattern="[a-zA-Z]+" required>
             </div>
             <div class="form-group">
                 <label for="price">Preço</label>
-                <input type="text" name="price" id="price" required>
+                <input type="text" name="price" id="price" pattern="[0-9]+" required>
             </div>
             <div class="form-group">
                 <label for="desc">Descrição</label>
-                <input type="text" name="desc" id="desc" required>
+                <input type="text" name="desc" id="desc" pattern="[a-zA-Z]+" required>
             </div>
-            <div class="form-group">
-                <button id="" type="submit">Submit</button>
+            <div class="form-group" style="flex-direction:row">
+                <button id="" type="submit">Cadastrar</button>
+                <button id="" type="reset" id="clear">Limpar</button>
             </div>
             
         </form>
