@@ -6,13 +6,11 @@
     outline: none;
     transition: 0.2s;
 }
-
 :root{
     --first: #333;
     --second: #1d1d1d;
     --text: #f8f8f8;
 }
-
 body::-webkit-scrollbar {
     width: 12px;
 }
