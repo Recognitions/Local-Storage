@@ -7,6 +7,7 @@ function removeProduct(id){
     })
     localStorage.setItem("products",JSON.stringify(newProduct))
 }
+
 function updateProduct(product){
     const storage = localStorage.getItem("products")
     const products = storage ? JSON.parse(storage) : []
@@ -70,6 +71,32 @@ function setTheme(){
     })
 }
 
+function checkTheme(){
+    const themes = [
+        {
+            name: "dark",
+            first: "#333",
+            second: "#1d1d1d",
+            text: "#f8f8f8"
+        },
+        {
+            name: "light",
+            first: "white",
+            second: "#ececec",
+            text: "#333"
+        }
+    ]
+    const storage = localStorage.getItem("theme")
+    const theme = storage ? JSON.parse(storage) : []
+    if(theme.length==0){
+        localStorage.setItem("theme",JSON.stringify([themes[1]]))
+    }else if(theme[0]?.name=="light"){
+        localStorage.setItem("theme",JSON.stringify([themes[0]]))
+    }else if(theme[0]?.name=="dark"){
+        localStorage.setItem("theme",JSON.stringify([themes[1]]))
+    }
+}
+
 document.addEventListener("DOMContentLoaded", ()=>{
     setTheme()
     renderProducts()
@@ -106,38 +133,14 @@ document.querySelector("#update form").addEventListener("submit",(event)=>{
     updateProduct(product)
     renderProducts()
 })
+
 document.querySelector("#update form button:last-child").addEventListener("click",(event)=>{
     event.preventDefault()
     const update = document.getElementById("update")
     update.style.display="none"
 })
 
-
 document.getElementById("theme").addEventListener('click',()=>{
-    const themes = [
-        {
-            name: "dark",
-            first: "#333",
-            second: "#1d1d1d",
-            text: "#f8f8f8"
-        },
-        {
-            name: "light",
-            first: "white",
-            second: "#ececec",
-            text: "#333"
-        }
-    ]
-    const storage = localStorage.getItem("theme")
-    const theme = storage ? JSON.parse(storage) : []
-    if(theme.length==0){
-        localStorage.setItem("theme",JSON.stringify([themes[1]]))
-    }else if(theme[0]?.name=="light"){
-        localStorage.setItem("theme",JSON.stringify([themes[0]]))
-    }else if(theme[0]?.name=="dark"){
-        localStorage.setItem("theme",JSON.stringify([themes[1]]))
-    }
-    
-
+    checkTheme()
     setTheme()
 })
